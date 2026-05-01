@@ -38,9 +38,9 @@ class _AddPageState extends State<AddPage> {
     if (!mounted) return;
 
     if (data) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text("Successfully add user / employee")));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Successfully add user / employee")),
+      );
       Navigator.pop(context, true);
     } else {
       ScaffoldMessenger.of(
@@ -69,8 +69,7 @@ class _AddPageState extends State<AddPage> {
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          onPressed: () =>
-              () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.close),
         ),
         actions: <Widget>[
