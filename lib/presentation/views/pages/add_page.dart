@@ -40,7 +40,7 @@ class _AddPageState extends State<AddPage> {
     if (data) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text("Successfully add user")));
+      ).showSnackBar(const SnackBar(content: Text("Successfully add user / employee")));
       Navigator.pop(context, true);
     } else {
       ScaffoldMessenger.of(
@@ -65,7 +65,7 @@ class _AddPageState extends State<AddPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add User"),
+        title: Text("Add Employee"),
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
