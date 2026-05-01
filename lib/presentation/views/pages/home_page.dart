@@ -49,93 +49,99 @@ class _HomePageState extends State<HomePage> {
           IconButton(onPressed: handleLogout, icon: Icon(Icons.logout)),
         ],
       ),
-      body: userViewModel.isLoading && userViewModel.employees.isEmpty
-          ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              itemCount: userViewModel.employees.length,
-              itemBuilder: (context, index) {
-                final data = userViewModel.employees[index];
+      body: Builder(
+        builder: (_) {
+          if (userViewModel.isLoading) {
+            return Center(child: CircularProgressIndicator());
+          }
 
-                if (userViewModel.isLoading) {
-                  return Center(child: CircularProgressIndicator());
-                }
+          if (userViewModel.employees.isEmpty) {
+            return Center(child: Text("Data tidak ada"));
+          }
 
-                return Container(
-                  padding: EdgeInsets.all(20.0),
-                  child: InkWell(
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailPage(id: data.id),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 25,
-                              backgroundColor: AppColors.primary,
-                              child: Text(
-                                data.firstName[0],
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "${data.firstName} ${data.lastName}",
-                                  style: TextStyle(
-                                    color: AppColors.typography,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                SizedBox(height: 2),
-                                Text(
-                                  data.email,
-                                  style: TextStyle(
-                                    color: AppColors.typography,
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            setState(() {
-                              if (favoriteId.contains(data.id)) {
-                                favoriteId.remove(data.id);
-                              } else {
-                                favoriteId.add(data.id);
-                              }
-                            });
-                          },
-                          icon: Icon(
-                            favoriteId.contains(data.id)
-                                ? Icons.star
-                                : Icons.star_outline,
-                            size: 25,
-                            color: favoriteId.contains(data.id)
-                                ? AppColors.primary
-                                : AppColors.typography,
-                          ),
-                        ),
-                      ],
+          return ListView.builder(
+            itemCount: userViewModel.employees.length,
+            itemBuilder: (context, index) {
+              final data = userViewModel.employees[index];
+
+              return Container(
+                padding: EdgeInsets.all(20.0),
+                child: InkWell(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailPage(id: data.id),
                     ),
                   ),
-                );
-              },
-            ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: AppColors.primary,
+                            child: Text(
+                              data.firstName[0],
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "${data.firstName} ${data.lastName}",
+                                style: TextStyle(
+                                  color: AppColors.typography,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(height: 2),
+                              Text(
+                                data.email,
+                                style: TextStyle(
+                                  color: AppColors.typography,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            if (favoriteId.contains(data.id)) {
+                              favoriteId.remove(data.id);
+                            } else {
+                              favoriteId.add(data.id);
+                            }
+                          });
+                        },
+                        icon: Icon(
+                          favoriteId.contains(data.id)
+                              ? Icons.star
+                              : Icons.star_outline,
+                          size: 25,
+                          color: favoriteId.contains(data.id)
+                              ? AppColors.primary
+                              : AppColors.typography,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.primary,
         shape: RoundedRectangleBorder(

@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<AuthViewModel>(
         builder: (context, auth, _) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             theme: AppTheme.light,
             home: auth.isLoggedIn ? HomePage() : LoginPage(),
           );

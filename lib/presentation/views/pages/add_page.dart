@@ -39,13 +39,13 @@ class _AddPageState extends State<AddPage> {
 
     if (data) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Successfully add user / employee")),
+        const SnackBar(content: Text("Successfully add employee")),
       );
       Navigator.pop(context, true);
     } else {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text("Error add user")));
+      ).showSnackBar(const SnackBar(content: Text("Error add employee")));
     }
   }
 
