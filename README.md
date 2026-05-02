@@ -8,6 +8,10 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
+### Requirements
+
+- Install Flutter 3 or latest (Flutter 3.41)
+- Install Java version 17 or latest
 
 ### Structure Project
 
