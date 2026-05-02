@@ -15,10 +15,10 @@ A few resources to get you started if this is your first Flutter project:
 
 ### Structure Project
 
-core -> global config
-models -> Data structure
-presentation -> UI & Logic UI
-services -> Handle API
+- core -> global config
+- models -> Data structure
+- presentation -> UI & Logic UI
+- services -> Handle API
 
 ### How to Run
 
