@@ -38,3 +38,7 @@ API_KEY= api key dari reqres
 **Add Employee :** required isi Name dan Job
 
 **Note :** File APK terdapat pada folder apk
+
+### How to Build
+
+https://docs.flutter.dev/deployment/android
