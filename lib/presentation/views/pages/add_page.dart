@@ -130,7 +130,7 @@ class _AddPageState extends State<AddPage> {
                     controller: jobController,
                   ),
                   AppInput(
-                    label: "Telphone",
+                    label: "Telephone",
                     icon: Icons.phone,
                     controller: telpController,
                   ),
