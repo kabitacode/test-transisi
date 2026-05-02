@@ -58,7 +58,7 @@ https://docs.flutter.dev/deployment/android
 
 <table>
     <tr>
-        <td><img width="250" height="500" alt="Screenshot 2026-05-02 at 10 52 40" src="https://github.com/user-attachments/assets/0e287744-437f-4625-a028-e7cbc2df9289" /></td>
+        <td><img width="250" height="500" alt="Screenshot 2026-05-02 at 11 17 13" src="https://github.com/user-attachments/assets/537247b7-41ea-4270-9100-dc1972f7ebe3" /></td>
         <td><img width="250" height="500" alt="Screenshot 2026-05-02 at 10 53 29" src="https://github.com/user-attachments/assets/49bc14fa-74f9-47c6-9ede-54ca92828792" /></td>
     </tr>
 </table>
