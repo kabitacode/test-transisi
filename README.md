@@ -36,8 +36,8 @@ API_KEY= api key dari reqres
 - Done
 
 **Login :**
-    - email : eve.holt@reqres.in
-    - password : cityslicka
+- email : eve.holt@reqres.in
+- password : cityslicka
 
 **Add Employee :** required isi Name dan Job
 
