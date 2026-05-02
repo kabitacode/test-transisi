@@ -109,7 +109,7 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                             SizedBox(height: 5),
                             Text(
-                              user.lastName,
+                              "Name",
                               style: Theme.of(context).textTheme.labelSmall,
                             ),
                           ],
@@ -148,7 +148,7 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                             SizedBox(height: 5),
                             Text(
-                              user.firstName,
+                              "E-mail",
                               style: Theme.of(context).textTheme.labelSmall,
                             ),
                           ],
